@@ -1,5 +1,8 @@
 package com.feedsheep.mall.pojo;
 
+
+import lombok.*;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -25,6 +28,12 @@ import java.util.Objects;
  *   PRIMARY KEY (`id`)
  * ) ENGINE=InnoDB AUTO_INCREMENT=100031 DEFAULT CHARSET=utf8mb3;
  */
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Category {
 
     private Integer id;
@@ -41,99 +50,5 @@ public class Category {
 
     private Date updateTime;
 
-    public Category() {
-    }
-
-    public Category(Integer id, Integer parentId, String name, Integer status, Integer sortOrder, Date createTime, Date updateTime) {
-        this.id = id;
-        this.parentId = parentId;
-        this.name = name;
-        this.status = status;
-        this.sortOrder = sortOrder;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getSortOrder() {
-        return sortOrder;
-    }
-
-    public void setSortOrder(Integer sortOrder) {
-        this.sortOrder = sortOrder;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Category category = (Category) o;
-        return Objects.equals(id, category.id) && Objects.equals(parentId, category.parentId) && Objects.equals(name, category.name) && Objects.equals(status, category.status) && Objects.equals(sortOrder, category.sortOrder) && Objects.equals(createTime, category.createTime) && Objects.equals(updateTime, category.updateTime);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, parentId, name, status, sortOrder, createTime, updateTime);
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", parentId=" + parentId +
-                ", name='" + name + '\'' +
-                ", status=" + status +
-                ", sortOrder=" + sortOrder +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
 
 }
